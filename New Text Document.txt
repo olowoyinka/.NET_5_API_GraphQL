@@ -1,0 +1,56 @@
+query {
+  players{
+    id
+    name
+    position {
+      name
+    }
+  }
+}
+
+
+query {
+  player (id: 1) {
+    id
+    name
+  }
+}
+
+
+
+mutation {
+  createPlayer(playerInput: {
+    name: "Joseph",
+    shirtNo: 4,
+    appearances: 50,
+    goals: 4,
+    positionId: 1
+  })
+  {
+     id,
+     name
+  }
+}
+
+
+mutation {
+  updatePlayer(id: 9, playerInput: {     
+    name: "Joseph",
+    shirtNo: 4,
+    appearances: 51,
+    goals: 6,
+    positionId: 1
+  })
+  {
+     id,
+     name,
+     appearances,
+     goals
+  }
+}
+
+
+
+mutation {
+  deletePlayer(id: 9) 
+}
